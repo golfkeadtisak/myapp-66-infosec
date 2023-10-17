@@ -1,0 +1,26 @@
+# pull source image for buid
+FROM node:20
+# update latest os and install some package for buid
+RUN apt-get update && apt-get install libvips-dev -y
+# set up environment
+ENV NODE_ENV=development
+# change directory
+WORKDIR /opt/
+# copy file install
+COPY ./package.json ./package-lock.json ./
+# set up path
+ENV PATH /opt/node_modules/.bin:$PATH
+# custom time to build
+# RUN yarn config set network-timeout 600000 -g && yarn install
+# RUN npm install
+# set working directory to app
+WORKDIR /opt/app
+# copy all file to app folder
+COPY ./ .
+# build
+RUN npm install
+# RUN npm run build
+# define port to run
+EXPOSE 1337
+# runing
+CMD [ "npm", "run", "develop"]
