@@ -2,8 +2,8 @@ version : '3'
 
 services :
   strapi4 :
-    container_name : 'jgzjvs-strapi4'
+    container_name : 'jgzjvs2-strapi4'
     ports:
       - 3000:1337
-    image : 'jgzjvs1/strapi4:1.1.0'
+    image : 'jgzjvs/strapi4:1.1.0'
     restart : 'unless-stopped'
