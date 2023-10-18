@@ -368,6 +368,7 @@ export interface ApiContactContact extends Schema.CollectionType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'Contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -425,6 +426,18 @@ export interface ApiContactContact extends Schema.CollectionType {
       Attribute.SetMinMax<{
         min: 1;
         max: 13;
+      }>;
+    line: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+        maxLength: 255;
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

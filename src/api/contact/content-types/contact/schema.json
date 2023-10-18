@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contact"
+    "displayName": "Contact",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -61,6 +62,18 @@
       "max": 13,
       "private": true,
       "min": 1,
+      "unique": true
+    },
+    "line": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "maxLength": 255,
+      "minLength": 1,
       "unique": true
     }
   }
