@@ -15,7 +15,7 @@ module.exports = {
    },
 
    async afterFindMany(event){
-     //console.log(event)
+     console.log(event)
      if(!event.result) return
      await event.result.forEach(item => {
         item.mobile = atob(item.mobile)
