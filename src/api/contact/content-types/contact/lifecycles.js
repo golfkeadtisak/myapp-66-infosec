@@ -6,6 +6,9 @@ module.exports = {
         event.params.data.line = btoa(event.params.data.line)
     },
 
+    async afterFindOne(event) {
+      event.result.mobile = atob(event.result.mobile)
+   },
 
    async afterFindMany(event) {
       await event.result.map(item => {
