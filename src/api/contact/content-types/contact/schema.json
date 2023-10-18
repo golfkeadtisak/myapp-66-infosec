@@ -63,6 +63,18 @@
       "max": 13,
       "private": true,
       "required": true
+    },
+    "line": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 255,
+      "minLength": 1
     }
   }
 }
